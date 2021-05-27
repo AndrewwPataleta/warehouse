@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.patstudio.warehouse.data.models.PickerOrderModel" />
+        <variable
+            name="viewModel"
+            type="com.patstudio.warehouse.ui.container.tabs.pick.PickViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> viewModel.selectItem(model)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/shadow_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/ic_track"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/SubTittleOne"
+                            android:gravity="start"
+                            android:text="@string/pick_packer"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/BodyOne"
+                            android:gravity="start"
+                            android:text="@{model.picker.full_name}"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/SubTittleOne"
+                            android:gravity="start"
+                            android:text="@string/batch"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/BodyOne"
+                            android:gravity="start"
+                            android:text='@{model.batch != null ? String.valueOf(model.batch) : @string/not_available}'/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/SubTittleOne"
+                            android:gravity="start"
+                            android:text="@string/status"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/BodyOne"
+                            android:gravity="start"
+                            android:text='@{model.status.toUpperCase()}'/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            style="@style/SubTittleOne"
+                            android:gravity="start"
+                            android:text="@string/order"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/green_rounded_background"
+                                android:visibility='@{model.priority ? View.VISIBLE : View.GONE}'>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="@style/BodyOne"
+                                    android:gravity="center"
+                                    android:textColor="@color/green"
+                                    android:text="@string/prioirty"/>
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/orderStatusContainer"
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/white_gray"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/ButtonPositive"
+                    android:layout_gravity="end"
+                    android:onClick="@{() -> viewModel.selectStartItem(model)}"
+                    android:text="@string/start"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

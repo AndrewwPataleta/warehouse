@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.WareHouse" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+    </style>
+
+    <style name="WareHouseNoActionBar" parent="Theme.WareHouse">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="WareHouseNoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+
+    </style>
+
+    <style name="ButtonPositive" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/orange_rounded_background</item>
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ButtonNegative" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:background">@drawable/orange_stroke_rounded_background</item>
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ButtonSync" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/orange_rounded_background</item>
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/button_sync_text_size</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="EditText" parent="Theme.WareHouse">
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:background">@drawable/et_background</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">@dimen/padding_et_login</item>
+
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="EditTextWithoutBoarder" parent="Theme.WareHouse">
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">@dimen/padding_et_login</item>
+
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="OrangeProgress" parent="Theme.WareHouse">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTintMode" tools:targetApi="lollipop">src_atop</item>
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/orange</item>
+    </style>
+
+    <style name="SubTittleOne" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/subtittle_one_size</item>
+      
+    </style>
+
+    <style name="MenuText" parent="SubTittleOne">
+        <item name="android:textAllCaps">true</item>
+
+
+    </style>
+
+    <style name="BodyOne" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/body_two_size</item>
+    </style>
+
+
+    <style name="HeadingOne" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/robotobold</item>
+        <item name="android:textSize">@dimen/heading_one_size</item>
+    </style>
+
+
+    <style name="Toolbar" parent="Theme.WareHouse">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/robotomedium</item>
+        <item name="android:textSize">@dimen/subtittle_one_size</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="TabLayout" parent="Theme.WareHouse">
+
+        <item name="tabIndicatorColor">@color/orange</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="tabSelectedTextColor">@color/orange</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.patstudio.warehouse.data.models.ItemModel" />
+        <variable
+            name="viewModel"
+            type="com.patstudio.warehouse.ui.container.boarder.BoarderViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/pick_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:background="@drawable/shadow_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_minus"
+                        android:onClick="@{() -> viewModel.minusPickItem(model)}"
+                        app:tint="@color/orange" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/boarder_mock"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_add"
+                        android:onClick="@{() -> viewModel.plusPickItem(model)}"
+                        app:tint="@color/orange" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/SubTittleOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.sku}"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/SubTittleOne"
+                    android:gravity="center_horizontal"
+                    android:text="@{model.name}"
+                    android:textAllCaps="true"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/light_orange_rounded_background"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/SubTittleOne"
+                        android:gravity="center_horizontal"
+                        android:text="@string/picking_instruction"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/orange"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/BodyOne"
+                        android:gravity="center_horizontal"
+                        android:text="@string/don_t_forget_to_check_if_the_handles_are_included_and_that_the_bag_is_clean"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/orange"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SubTittleOne"
+                    android:gravity="start"
+                    android:text="@string/picking_location"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/BodyOne"
+                        android:gravity="center_horizontal"
+                        android:text="@{model.location}"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SubTittleOne"
+                    android:gravity="start"
+                    android:text="@string/barcode"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/BodyOne"
+                        android:gravity="center_horizontal"
+                        android:text="@{model.ean}"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SubTittleOne"
+                    android:gravity="start"
+                    android:text="@string/picked"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <FrameLayout
+                    android:id="@+id/plusPickedContainer"
+                    android:layout_width="match_parent"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:onClick="@{() -> viewModel.plusPickItem(model)}"
+                    android:background="@drawable/light_green_rounded_background"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_up_arrow"
+                        android:layout_gravity="center"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/pickedContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{() -> viewModel.selectEditItem(model)}"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        style="@style/BodyOne"
+                        android:gravity="center_vertical|start"
+                        android:text="@{String.format(@string/quantity_picked, model.quantity_picked,model.quantity)}"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="15sp"/>
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/minusPickedContainer"
+                    android:layout_width="match_parent"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:onClick="@{() -> viewModel.minusPickItem(model)}"
+                    android:background="@drawable/light_green_rounded_background"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_up_arrow"
+                        android:rotation="180"
+                        android:layout_gravity="center_vertical"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SubTittleOne"
+                    android:gravity="start"
+                    android:text="BIN #1"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:id="@+id/binContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        style="@style/BodyOne"
+                        android:gravity="center_vertical|start"
+                        android:text="@{String.format(@string/quantity_bin, model.bin_count,model.quantity)}"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="15sp"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/BodyOne"
+                        android:gravity="center_horizontal"
+                        android:text="Bin #1 / #50005"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:background="@drawable/light_green_rounded_background">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/BodyOne"
+                        android:gravity="center_horizontal"
+                        android:text="Carton Allocation"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/SubTittleOne"
+                        android:gravity="center_horizontal"
+                        android:text="@string/quantity"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"/>
+
+                    <com.patstudio.warehouse.ui.custom.QuantityControllerView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white_gray"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

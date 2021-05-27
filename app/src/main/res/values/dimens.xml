@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_sync_text_size">14sp</dimen>
+    <dimen name="subtittle_one_size">14sp</dimen>
+    <dimen name="body_two_size">14sp</dimen>
+    <dimen name="heading_one_size">15sp</dimen>
+    <dimen name="padding_et_login">16dp</dimen>
+</resources>
